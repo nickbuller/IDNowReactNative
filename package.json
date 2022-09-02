@@ -7,7 +7,9 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "clean:run-ios": "rm -rf node_modules && cd ios && rm -rf Pods Podfile.lock && cd .. && yarn install && npx pod-install && npx react-native run-ios",
+    "clean:run-android": "rm -rf node_modules && cd ios && rm -rf Pods Podfile.lock && cd .. && yarn install && npx pod-install && npx react-native run-android"
   },
   "dependencies": {
     "react": "18.0.0",

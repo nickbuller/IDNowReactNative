@@ -1,24 +1,26 @@
 import Foundation
 
-#if !targetEnvironment(simulator)
-import IDNowSDKCore
-#endif
+#if targetEnvironment(simulator)
 
 @objc(IdnowCore)
 class IdnowCore: NSObject {
-    private var _resolve: RCTPromiseResolveBlock? = nil;
-    private var _reject: RCTPromiseRejectBlock? = nil;
-
-    #if targetEnvironment(simulator)
-
     @objc
     func startIdent(_ token: String, preferredLanguage: String, resolve: @escaping RCTPromiseResolveBlock, reject: @escaping RCTPromiseRejectBlock) -> Void {
-        let error = NSError(domain: "IDNow", code: "1", userInfo: nil)
+        let error = NSError(domain: "IDNow", code: 1, userInfo: nil)
         reject(String(describing: "1"), "IDNow not supported on the Simulator", error);
     }
 
-    #else
+    @objc
+    static func requiresMainQueueSetup() -> Bool {
+        return true
+    }
+}
 
+#else
+import IDNowSDKCore
+
+@objc(IdnowCore)
+class IdnowCore: NSObject {
     @objc
     func startIdent(_ token: String, preferredLanguage: String, resolve: @escaping RCTPromiseResolveBlock, reject: @escaping RCTPromiseRejectBlock) -> Void {
         let rootViewController = UIApplication.shared.delegate?.window??.rootViewController
@@ -31,10 +33,11 @@ class IdnowCore: NSObject {
             }
         })
     }
-    #endif
 
     @objc
     static func requiresMainQueueSetup() -> Bool {
         return true
     }
 }
+
+#endif

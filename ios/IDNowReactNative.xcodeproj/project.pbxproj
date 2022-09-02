@@ -234,7 +234,7 @@
 			);
 			mainGroup = 83CBB9F61A601CBA00E9B192;
 			packageReferences = (
-				11FB5D8828C0F893006516ED /* XCRemoteSwiftPackageReference "de.idnow.ios.sdk" */,
+				11FB5D8828C0F893006516ED /* XCRemoteSwiftPackageReference "de.idnow.ios.sdk.spm" */,
 			);
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
@@ -726,7 +726,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		11FB5D8828C0F893006516ED /* XCRemoteSwiftPackageReference "de.idnow.ios.sdk" */ = {
+		11FB5D8828C0F893006516ED /* XCRemoteSwiftPackageReference "de.idnow.ios.sdk.spm" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/idnow/de.idnow.ios.sdk.spm";
 			requirement = {
@@ -739,7 +739,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		11FB5D8928C0F893006516ED /* IDNowSDKCore-without-NFC */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 11FB5D8828C0F893006516ED /* XCRemoteSwiftPackageReference "de.idnow.ios.sdk" */;
+			package = 11FB5D8828C0F893006516ED /* XCRemoteSwiftPackageReference "de.idnow.ios.sdk.spm" */;
 			productName = "IDNowSDKCore-without-NFC";
 		};
 /* End XCSwiftPackageProductDependency section */
